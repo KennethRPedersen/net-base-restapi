@@ -36,7 +36,7 @@ namespace restapi_base.Controllers
             catch (Exception e)
             {
                 _logger.LogError($"Failed to get all quotes: {e}");
-                return BadRequest(e);
+                return BadRequest(e.Message);
             }
 
         }
@@ -56,8 +56,8 @@ namespace restapi_base.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogInformation($"Failed to fetch quote with ID: {id}: {e}");
-                return BadRequest(e);
+                _logger.LogError($"Failed to fetch quote with ID: {id}: {e}");
+                return BadRequest(e.Message);
             }
         }
 
@@ -76,8 +76,8 @@ namespace restapi_base.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogInformation($"Failed to save new quote: {e}");
-                return BadRequest(e);
+                _logger.LogError($"Failed to save new quote: {e}");
+                return BadRequest(e.Message);
             }
         }
 
@@ -97,8 +97,8 @@ namespace restapi_base.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogInformation($"Failed to delete quote: {e}");
-                return BadRequest(e);
+                _logger.LogError($"Failed to delete quote: {e}");
+                return BadRequest(e.Message);
             }
         }
 
@@ -119,8 +119,8 @@ namespace restapi_base.Controllers
             }
             catch (Exception e)
             {
-                _logger.LogInformation($"Failed to delete quote: {e}");
-                return BadRequest(e);
+                _logger.LogError($"Failed to delete quote: {e}");
+                return BadRequest(e.Message);
             }
         }
     }

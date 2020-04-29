@@ -55,8 +55,10 @@ namespace restapi_base
                 ForwardedHeaders = ForwardedHeaders.XForwardedFor | ForwardedHeaders.XForwardedProto
             });
 
+            // Make sure we use HTTPS
             app.UseHttpsRedirection();
 
+            // For authorization, not really used yet
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
