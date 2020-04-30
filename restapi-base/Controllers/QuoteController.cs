@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Core.AppServices.Interfaces;
 using Core.Entities;
 using Microsoft.AspNetCore.Mvc;
@@ -16,7 +14,8 @@ namespace restapi_base.Controllers
         private readonly IQuoteService _quoteService;
         private readonly ILogger<QuoteController> _logger;
 
-        public QuoteController(ILogger<QuoteController> logger, IQuoteService quoteService)
+        public QuoteController(ILogger<QuoteController> logger,
+            IQuoteService quoteService)
         {
             _quoteService = quoteService;
             _logger = logger;
